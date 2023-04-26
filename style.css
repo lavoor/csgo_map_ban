@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Sora:wght@800&display=swap');
+body{
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Sora', sans-serif;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/bg1.jpg');
+    background-size: 150%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    overflow-x: hidden;
+}
+.container{
+    width: 1500px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 40px 0 40px 0;
+    position: relative;
+    user-select: none;
+}
+.header-btn{
+    position: absolute;
+    right: 0;
+    transition: 0.1s;
+    color: #ffffff3f;
+}
+.active.header-btn{
+    color: #fff;
+    cursor: pointer;
+}
+.slider{
+    display: flex;
+    flex-direction: row;
+    width: min-content;
+    height: 100vh;
+    position: relative;
+}
+.slide{
+    height: 100vh;
+    width: 100vw;
+    transition: 0.5s;
+}
+.maps{
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 320px);
+    justify-content: space-between;
+}
+.map{
+    width: 320px;
+    height: 180px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 0.15s;
+    background-image: url("img/anubis.jpg");
+    background-size: 100%;
+    background-position: center;
+}
+.active{
+    background-size: 110%;
+}
+.map:hover{
+    background-size: 110%;
+}
+.active .map-title{
+    border: 5px solid rgba(255, 255, 255, 0.3);
+}
+.map:hover .map-title{
+    backdrop-filter: brightness(0.7);
+}
+
+.map-title{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: rgba(238, 238, 238, 0.7);
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    backdrop-filter: brightness(0.65);
+    transition: 0.15s;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border: 0px solid rgba(255, 255, 255, 0);
+    user-select: none;
+}
+
+.maps-ban-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.ban-map:hover .map-title{
+    background-color: rgba(255, 0, 43, 0.2);
+    backdrop-filter: brightness(0.7) saturate(0%) !important;
+}
+.banned{
+    cursor: default;
+    background-size: 100% !important;
+}
+.banned .map-title{
+    backdrop-filter: brightness(0.65) saturate(0%) !important;
+    background-color: rgba(255, 0, 43, 0.2) !important;
+}
+.result{
+    background-image: url('img/bg1.jpg');
+    background-size: 150%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.result-container{
+    backdrop-filter: blur(20px) brightness(0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 1601px) {
+    .container{
+        width: 1248px;
+    }
+    .maps{
+        grid-template-columns: repeat(auto-fill, 360px);
+    }
+    .map{
+        width: 360px;
+    }
+}
+@media only screen and (max-width: 1281px) {
+    .container{
+        width: 900px;
+    }
+    .maps{
+        grid-template-columns: repeat(auto-fill, 440px);
+    }
+    .map{
+        width: 440px;
+    }
+}
+@media only screen and (max-width: 1001px) {
+    .container{
+        width: 700px;
+    }
+    .maps{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .map{
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (max-width: 801px) {
+    .container{
+        width: 500px;
+    }
+    .maps{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .map{
+        width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
