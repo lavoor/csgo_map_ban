@@ -1,20 +1,20 @@
 const minmaps = 3
 
 const maps = [
-    {title: 'anubis', img: 'anubis.jpg'},
-    {title: 'agency', img: 'agency.jpg'},
-    {title: 'ancient', img: 'ancient.jpg'},
-    {title: 'cache', img: 'cache.jpg'},
-    {title: 'cobblestone', img: 'cobblestone.jpg'},
-    {title: 'dust2', img: 'dust2.jpg'},
-    {title: 'inferno', img: 'inferno.jpg'},
-    {title: 'mirage', img: 'mirage.jpg'},
-    {title: 'nuke', img: 'nuke.jpg'},
-    {title: 'office', img: 'office.jpg'},
-    {title: 'overpass', img: 'overpass.jpg'},
-    {title: 'train', img: 'train.jpg'},
-    {title: 'tuscan', img: 'tuscan.jpg'},
-    {title: 'vertigo', img: 'vertigo.jpg'},
+    {title: 'anubis', img: 'anubis.webp'},
+    {title: 'agency', img: 'agency.webp'},
+    {title: 'ancient', img: 'ancient.webp'},
+    {title: 'cache', img: 'cache.webp'},
+    {title: 'cobblestone', img: 'cobblestone.webp'},
+    {title: 'dust2', img: 'dust2.webp'},
+    {title: 'inferno', img: 'inferno.webp'},
+    {title: 'mirage', img: 'mirage.webp'},
+    {title: 'nuke', img: 'nuke.webp'},
+    {title: 'office', img: 'office.webp'},
+    {title: 'overpass', img: 'overpass.webp'},
+    {title: 'train', img: 'train.webp'},
+    {title: 'tuscan', img: 'tuscan.webp'},
+    {title: 'vertigo', img: 'vertigo.webp'},
 ]
 let chosen = []
 let notbanned = []
@@ -41,7 +41,7 @@ maps.map(map => {
 
 function randombg(){
     let random = Math.floor(Math.random() * 3) + 1
-    document.body.style.backgroundImage = `url('img/bg${random}.jpg')`
+    document.body.style.backgroundImage = `url('img/bg${random}.webp')`
 }
 randombg()
 
@@ -79,21 +79,33 @@ let isChosen = false
 function nextStage(){
     let len = chosen.length
     let stage1 = document.querySelector('.stage1')
+    let stage2 = document.querySelector('.stage2')
     if(stage == 1){
         if(len >= minmaps){
             chosen.sort(compare);
+            stage2.style.display = 'block'
             stage1.style.marginLeft = "-100vw"
             if(len < 4){
                 mapsBanDiv.classList.add('maps-ban-flex')
             }
             notbanned = chosen
             generateBanMaps()
+            setTimeout(function(){
+                stage1.style.display = 'none'
+                stage1.style.marginLeft = "0vw"
+            }, 500)
         }
     }
     else if(stage == 2){
-        stage1.style.marginLeft = "-200vw"
-        document.querySelector('.result').style.backgroundImage = `url('img/${notbanned[0].img}')`
+        let result = document.querySelector('.result')
+        stage2.style.marginLeft = "-100vw"
+        result.style.backgroundImage = `url('img/${notbanned[0].img}')`
+        result.style.display = 'block'
         document.querySelector('.result-container').innerHTML = `CHOSEN MAP IS ${notbanned[0].title}!`
+        setTimeout(function(){
+            stage2.style.display = 'none'
+            stage2.style.marginLeft = "0vw"
+        }, 500)
     }
 }
 

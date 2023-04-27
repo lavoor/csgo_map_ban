@@ -6,7 +6,7 @@ body{
     color: #ffffff;
     width: 100%;
     height: 100%;
-    background-image: url('img/bg1.jpg');
+    background-image: url('img/bg1.webp');
     background-size: 150%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ body{
     display: flex;
     flex-direction: row;
     width: min-content;
-    height: 100vh;
+    height: 100%;
     position: relative;
 }
 .slide{
@@ -68,8 +68,8 @@ body{
     cursor: pointer;
     box-sizing: border-box;
     transition: 0.15s;
-    background-image: url("img/anubis.jpg");
-    background-size: 100%;
+    background-image: url("img/anubis.webp");
+    background-size: 102%;
     background-position: center;
 }
 .active{
@@ -117,14 +117,14 @@ body{
 }
 .banned{
     cursor: default;
-    background-size: 100% !important;
+    background-size: 102% !important;
 }
 .banned .map-title{
     backdrop-filter: brightness(0.65) saturate(0%) !important;
     background-color: rgba(255, 0, 43, 0.2) !important;
 }
 .result{
-    background-image: url('img/bg1.jpg');
+    background-image: url('img/bg1.webp');
     background-size: 150%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -142,6 +142,13 @@ body{
     height: 100vh;
     text-transform: uppercase;
     font-size: 30px;
+    text-align: center;
+}
+.stage2{
+    display: none;
+}
+.result{
+    display: none;
 }
 
 @media only screen and (max-width: 1601px) {
@@ -168,7 +175,7 @@ body{
 }
 @media only screen and (max-width: 1001px) {
     .container{
-        width: 700px;
+        width: 600px;
     }
     .maps{
         width: auto;
@@ -181,10 +188,13 @@ body{
         margin-left: auto;
         margin-right: auto;
     }
+    .result-container{
+        font-size: 18px;
+    }
 }
 @media only screen and (max-width: 801px) {
     .container{
-        width: 500px;
+        width: 440px;
     }
     .maps{
         width: auto;
@@ -194,6 +204,22 @@ body{
     }
     .map{
         width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (max-width: 501px) {
+    .container{
+        width: 320px;
+    }
+    .maps{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .map{
+        width: 320px;
         margin-left: auto;
         margin-right: auto;
     }
